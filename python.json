@@ -1,0 +1,119 @@
+{
+	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"SAP Framework Documentation": {
+		"prefix": "doc", 
+		"body": [
+			"SAP.documentation('${1:MSG}')", 
+			"$0"
+		], 
+		"description": "SAP Framework - Generate documentation comment in test case output log."
+	}, 
+	"SAP Framework Base": {
+		"prefix": "base", 
+		"body": [
+			"${1:DOC STRING}", 
+			"", 	
+			"# Imports", 
+			"from SapGui import *", 
+			"import data", 
+			"", 
+			"SAP = Gui(test_case=data.test_case, monitor=2, connection_name=data.system)", 
+			"", 
+			"# Tasks", 
+			"SAP.documentation(f'Connect to SAP - {SAP.connection_name}')", 
+			"SAP.open_connection()", 
+			"", 
+			"SAP.documentation('Run Transaction ${2:TRANSACTION}')", 
+			"SAP.start_transaction('${2:TRANSACTION}')", 
+			"", 
+			"SAP.documentation('${3:MSG}')", 
+			"$0"
+		], 
+		"description": "SAP Framework - Generate basic starting text for new task.py file."
+	}, 
+	"SAP Framework Text": {
+		"prefix": "txt", 
+		"body": [
+			"SAP.text('${1:ELEMENT ID}', ${2:TEXT})", 
+			"$0"
+		], 
+		"description": "SAP Framework - Generates text input function for GuiCTextField and other SAP GUI text fields."
+	}, 
+	"SAP Framework Click": {
+		"prefix": "click", 
+		"body": [
+			"SAP.click('${1:ELEMENT ID}')", 
+			"$0"
+		], 
+		"description": "SAP Framework - Generates click function for SAP GUI elements."
+	}, 
+	"SAP Framework Select Checkbox": {
+		"prefix": "sc", 
+		"body": [
+			"SAP.select_checkbox{'${1:ELEMENT ID}')", 
+			"$0" 
+		], 
+		"description": "SAP Framework - Generates a select checkbox function to select a GuiCheckBox element."
+	}, 
+	"SAP Framework Press Enter": {
+		"prefix": "enter", 
+		"body": [
+			"SAP.enter()", 
+			"$0"
+		], 
+		"description": "SAP Framework - Generates a enter function for SAP GUI."
+	}, 
+	"SAP Framework For Loop": {
+		"prefix": "fl", 
+		"body": [
+			"for index, item in enumerate(${1:LIST}):", 
+			"$0"
+		], 
+		"description": "SAP Framework - Generates a for loop to enumerate over a list of items."
+	}, 
+	"SAP Framework Press F3": {
+		"prefix": "f3", 
+		"body": [
+			"SAP.send_vkey('F3')", 
+			"$0"
+		], 
+		"description": "SAP Framework - Generates function to press F3."
+	}, 
+	"SAP Framework Press F8": {
+		"prefix": "f8", 
+		"body": [
+			"SAP.send_vkey('F8')", 
+			"$0"
+		], 
+		"description": "SAP Framework - Generates function to press F3."
+	},
+	"SAP Framework Save": {
+		"prefix": "save", 
+		"body": [
+			"SAP.save()", 
+			"$0"
+		], 
+		"description": "SAP Framework - Generate save function."
+	}, 
+	"SAP Framework Start Transaction": {
+		"prefix": "start", 
+		"body": [
+			"SAP.documentation('Run Transaction ${1:TRANSACTION}')", 
+			"SAP.start('${1:TRANSACTION}')", 
+			"$0"
+		], 
+		"description": "SAP Framework - Generate start transaction function."
+	}
+}
