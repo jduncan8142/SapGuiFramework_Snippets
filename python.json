@@ -67,6 +67,14 @@
 		], 
 		"description": "SAP Framework - Generates a select checkbox function to select a GuiCheckBox element."
 	}, 
+	"SAP Framework Unselect Checkbox": {
+		"prefix": "usc", 
+		"body": [
+			"SAP.unselect_checkbox{'${1:ELEMENT ID}')", 
+			"$0" 
+		], 
+		"description": "SAP Framework - Generates a select checkbox function to unselect a GuiCheckBox element."
+	}, 
 	"SAP Framework Press Enter": {
 		"prefix": "enter", 
 		"body": [
@@ -97,7 +105,7 @@
 			"SAP.send_vkey('F8')", 
 			"$0"
 		], 
-		"description": "SAP Framework - Generates function to press F3."
+		"description": "SAP Framework - Generates function to press F8."
 	},
 	"SAP Framework Save": {
 		"prefix": "save", 
@@ -107,6 +115,14 @@
 		], 
 		"description": "SAP Framework - Generate save function."
 	}, 
+	"SAP Framework Back": {
+		"prefix": "back", 
+		"body": [
+			"SAP.back()", 
+			"$0"
+		], 
+		"description": "SAP Framework - Generates function to press Back button via F3 vkey press."
+	}, 
 	"SAP Framework Start Transaction": {
 		"prefix": "start", 
 		"body": [
@@ -115,5 +131,29 @@
 			"$0"
 		], 
 		"description": "SAP Framework - Generate start transaction function."
-	}
+	}, 
+	"SAP Framework Insert In Table": {
+		"prefix": "iit", 
+		"body": [
+			"SAP.insert_in_table(table_id='${1:TABLE ID}', value=${2:VALUE})", 
+			"$0"
+		], 
+		"description": "SAP Framework - Generates function to insert record into table."
+	},
+	"SAP Framework Dump GridView": {
+		"prefix": "dump gv", 
+		"body": [
+			"SAP.dump_grid_view(table_id='${1:TABLE ID}')", 
+			"$0"
+		], 
+		"description": "SAP Framework - Generates function to dump values from a GridView GUI element."
+	},
+	"SAP Framework Select Table Row": {
+		"prefix": "select table row", 
+		"body": [
+			"SAP.select_table_row(table_id='${1:TABLE ID}', row_num=${2:ROW})", 
+			"$0"
+		], 
+		"description": "SAP Framework - Generates function to select row in GuiTableControl."
+	},
 }
